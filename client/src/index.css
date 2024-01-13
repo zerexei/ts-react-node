@@ -1,68 +1,94 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* ++> Respect browser scrollbar */
+  /* body {
+    margin-right: calc(-1 * (100vw - 100%));
+    width: 100%;
+  } */
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+  /* .w-screen {
+    width: 100vw;
+    max-width: 100%;
+  } */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  /* ++> End respect browser scrollbar */
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  .bug {
+    border: 1px solid red !important;
   }
-  a:hover {
-    color: #747bff;
+
+  /* # Base */
+  .font-sans {
+    font-family: 'Open Sans', sans-serif;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
   }
-}
+
+  .heading-1 {
+    @apply text-4xl font-bold mb-4;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-bold mb-3;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-bold mb-2;
+  }
+
+  .button {
+    @apply px-4 py-2 rounded bg-blue-500 text-white cursor-pointer hover:bg-blue-700;
+  }
+
+  .paragraph {
+    @apply text-base leading-6;
+  }
+
+  .label {
+    @apply block mb-px text-sm font-medium;
+  }
+
+  .input {
+    @apply block w-full px-3 py-2 border rounded-md focus:ring-1 focus:ring-indigo-500 focus-visible:outline-none focus:border-indigo-500;
+  }
+
+  /* # Containers */
+  .main-container {}
+
+  .section {
+    margin-bottom: 5rem;
+    padding: 2rem;
+  }
+
+  /* # States */
+  .hover-ring {
+    @apply hover:ring hover:ring-blue-400 hover:ring-offset-1;
+  }
+
+  /* # Components */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  /* Track */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: lightgray;
+  }
+
+  /* Handle */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(79, 70, 229, .5);
+    /* border-top: 30px solid gray; */
+  }
+
+  /* Handle on hover */
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(79, 70, 229, .75);
+  }
